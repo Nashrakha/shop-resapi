@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import { Link } from 'react-router-dom';
 import api from '../api';
 function TaskList() {
@@ -99,7 +99,7 @@ function TaskList() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8000/shop/${id}`);
+            await api.delete(`/shop/${id}`);
             setDeleteMessage('Shop deleted successfully');
             fetchShops();
         } catch (err) {
@@ -168,7 +168,7 @@ function TaskList() {
                     <h1 className="text-orange-400 text-3xl font-sans capitalize px-2 mb-4">All shops will display here</h1>
 
                     <div className="h-[400px] overflow-y-auto border border-gray-300 rounded-lg">
-                        <div className='flex justify-between items-center px-3'>
+                        {/* <div className='flex justify-between items-center px-3 fixed top-0'>
                             <select name="" id="" className='border-double border-slate-500 rounded-lg'>
                                 <option value="">Name</option>
                                 <option value="">-Name</option>
@@ -176,7 +176,7 @@ function TaskList() {
                                 <option value="">-Price</option>
                             </select>
                             <input type="text" placeholder='Seacrh Name' className='py-2 m-2 px-3 w-2/4 border border-slate-400 rounded-lg' />
-                        </div>
+                        </div> */}
                         <table className="min-w-full">
                             <thead className="bg-gray-100 sticky top-0">
                                 <tr>
